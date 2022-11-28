@@ -3,6 +3,10 @@ server:
 
 ## Default connection pool
 spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     hikari:
       connection-timeout: 20000
@@ -13,4 +17,7 @@ spring:
   flyway:
     schemas:
     - users
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/dev
     
